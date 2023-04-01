@@ -1,0 +1,31 @@
+.header {
+    background: #1F4D36;
+}
+.navmenu {
+    display: flex;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21px;
+}
+ul{
+    display: flex; 
+}
+
+.app {
+    padding: 0 25px 0 45px;
+    background: #6157AB;
+border-radius: 5px;
+}
+.button {
+    background: #1F4D36;
+    color: #004822;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 21px;
+background: rgba(241, 236, 218, 0.95);
+background: #F2F4EA;
+}
