@@ -1,18 +1,24 @@
+import { Link } from "react-router-dom";
 import styles from "./navBar.module.scss"
 
 const NavBar = () => {
     return (
         <header className={styles.header}>
-            <div className={styles.navmenu}>
+            <div className={styles.container}>
+            <h4>Awesome<span>logo</span></h4>
+            <div className={styles.navMenu}>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/hotels">Hotels</a></li>
-                    <li><a href="/order">My order</a></li>
+                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/hotels">Hotels</Link></li>
+                    <li><Link to="/order">My order</Link></li>
                 </ul>
-                <ul>
-                    <li><a href="/signIn">Sign in</a></li>
-                    <li><a href="/signUn">Sign up</a></li>
+            </div>
+            <div className={styles.navSign}>
+            <ul className="ul-sign">
+                    <li><Link to="/signin">Sign in</Link></li>
+                    <li><Link to="/signUp">Sign up</Link></li>
                 </ul>
+            </div>  
             </div>
             
         </header>
