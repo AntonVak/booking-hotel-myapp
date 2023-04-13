@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./components/navBar/navBar";
 import HotelPage from "./mainPages/hotels/hotelPage";
 import OrderPage from "./mainPages/order/orderPage";
-import SignForm from "./mainPages/signForm/signForm";
+import Login from "./mainPages/signForm/login";
 import HomePage from "./mainPages/home/homePage";
 
 function App() {
@@ -13,10 +13,9 @@ function App() {
       <Switch>
         <Route path="/hotels" component={HotelPage} />
         <Route path="/order" component={OrderPage} />
-        <Route path="/signin" component={SignForm} />
+        <Route path="/signin" component={Login} />
         <Route path="/home" exact component={HomePage} />
-        <Redirect to="/home"/>
-        
+        <Redirect to="/home" />
       </Switch>
     </div>
   );

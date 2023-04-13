@@ -26,21 +26,21 @@ const HotelPage = () => {
   const hotelSplit = paginate(hotels, currentPage, pageSize)
   // console.log(hotelSplit);
 
-  // const onToggleBookMark = (id) => {
-  //    setHotels(hotels.map((hotel)) =>{
-  //     if(hotel.id === id) {
-  //       return {...hotel, bookmark: !hotel.bookmark}
-  //     }
-  //     return hotel
-  //   })
-  // }
+  const onToggleBookMark = (id) => {
+     setHotels(hotels.map((hotel) =>{
+      if(hotel.id === id) {
+        return {...hotel, bookmark: !hotel.bookmark}
+      }
+      return hotel
+    }))
+  }
   return (
     <div className={styles.container}>
     
       <div className={styles.hotelsList}>
       <SideBar/>
         {hotelSplit &&
-          hotelSplit.map((hotel) => <CardHotel {...hotel} key={hotel.id} />)}
+          hotelSplit.map((hotel) => <CardHotel onToggleBookMark={onToggleBookMark} {...hotel} key={hotel.id} />)}
       </div>
       <Pagination
         hotels={hotels}

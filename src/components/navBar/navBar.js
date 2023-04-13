@@ -15,8 +15,8 @@ const NavBar = () => {
             </div>
             <div className={styles.navSign}>
             <ul className="ul-sign">
-                    <li><Link to="/signin">Sign in</Link></li>
-                    <li><Link to="/signUp">Sign up</Link></li>
+                    <li><Link to="/signin">SignIn</Link></li>
+                    <li><Link to="/signUp">SignUp</Link></li>
                 </ul>
             </div>  
             </div>

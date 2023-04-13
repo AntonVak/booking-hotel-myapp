@@ -7,7 +7,7 @@ const validator = (data, config) => {
       case "isRequired":
         statusValidate = data.trim() === "";
         break;
-      case "isMail": {
+      case "isEmail": {
         const emailRegExp = /^\S+@\S+\.\S+$/g;
         //вызов функции
         statusValidate = !emailRegExp.test(data);
@@ -43,7 +43,7 @@ const validator = (data, config) => {
         //config[fieldName][validateMethod] = message
         config[fieldName][validateMethod]
       );
-      console.log(data[fieldName]);
+      // console.log(data[fieldName]);
       // console.log(validateMethod);
       if (error && !errors[fieldName]) {
         errors[fieldName] = error;

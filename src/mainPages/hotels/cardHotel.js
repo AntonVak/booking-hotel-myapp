@@ -1,7 +1,7 @@
 import BookMark from "../../components/bookMark/bookMark";
 import styles from "./cardHotel.module.scss";
 
-const CardHotel = ({ id, name, title, description, price, rate, image }) => {
+const CardHotel = ({ id, name, title, description, price, rate, image, onToggleBookMark }) => {
   
   const rating = (num) => {
     if(num <=5) {
@@ -28,7 +28,7 @@ const CardHotel = ({ id, name, title, description, price, rate, image }) => {
           <span className={styles.hotelRate}>{`${rate} ${rating(rate)} `}</span>
           <span className={styles.hotelPrice}>{`$${price}`}</span>
         </footer>
-        <BookMark />
+        <BookMark onToggleBookMark={onToggleBookMark} id={id} />
         <button className="btn btn-primary mt-3 btn-lg">Book Now </button>
         </div>
         

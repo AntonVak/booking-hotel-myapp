@@ -2,15 +2,16 @@
 
 import { useState } from "react";
 
-const BookMark = () => {
+const BookMark = ({id, onToggleBookMark}) => {
     const [bookMark, setBookMark] = useState(false);
 
-    const onToggleBookMark = () => {
-        setBookMark(true)
+    const onToggleBookMarkHandler = () => {
+        setBookMark(!bookMark)
+        onToggleBookMark(id)
         console.log(bookMark)
     }
     return ( 
-        <button onClick={()=> onToggleBookMark()}>
+        <button onClick={()=> onToggleBookMarkHandler()}>
             
             <i className={"bi bi-star" + (bookMark ? "-fill" : "")}></i>
         </button>
