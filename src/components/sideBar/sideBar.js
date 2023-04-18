@@ -1,6 +1,9 @@
+// import { useState } from "react";
+import ListCitysBar from "./listCitysBar";
 import styles from "./sideBar.module.scss"
 
-const SideBar = () => {
+const SideBar = ({targetInput, hotels}) => {
+  
   return (
     <aside className={styles.aside}>
       <div className="input-group mb-3">
@@ -10,12 +13,14 @@ const SideBar = () => {
         <input
           type="text"
           className="form-control"
-          placeholder="Username"
+          placeholder="Search hotel"
           aria-label="Username"
-          aria-describedby="basic-addon1"
+          onChange={targetInput}
+          
         />
       </div>
       <h3>Choose city</h3>
+      <ListCitysBar {...hotels}/>
 
     </aside>
   );
