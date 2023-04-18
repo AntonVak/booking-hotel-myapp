@@ -1,18 +1,25 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import API from "../../api";
 import Pagination from "../../components/pagination/pagination";
 import SideBar from "../../components/sideBar/sideBar";
 import { paginate } from "../../utils/paginate";
 import CardHotel from "./cardHotel";
+import { hotelsLoading, hotelsLoaded } from "../../store/hotelsSlice";
 import styles from "./hotelPage.module.scss";
 
 const HotelPage = () => {
-  const [hotels, setHotels] = useState([]);
+  const hotels = useSelector((state) => state.hotels.hotels)
+  const loading = useSelector((state) => state.hotels.loading)
+  const dispatchFunc = useDispatch();
+  // const [hotels, setHotels] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchHotels, setSearchHotels] = useState("");
   // console.log();
+
   useEffect(() => {
-    API.hotels.fetchAll().then((data) => setHotels(data));
+    dispatchFunc(hotelsLoading())
+    API.hotels.fetchAll().then((data) => dispatchFunc(hotelsLoaded(data)));
   }, []);
 
   const count = hotels.length;
@@ -38,14 +45,14 @@ const HotelPage = () => {
   console.log(hotelSplit);
 
   const onToggleBookMark = (id) => {
-    setHotels(
+    hotelsLoaded((
       hotels.map((hotel) => {
         if (hotel.id === id) {
           return { ...hotel, bookmark: !hotel.bookmark };
         }
         return hotel;
       })
-    );
+    ));
   };
   return (
     <div className={styles.container}>
