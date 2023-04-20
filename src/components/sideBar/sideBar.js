@@ -20,7 +20,9 @@ const SideBar = ({targetInput, hotels}) => {
         />
       </div>
       <h3>Choose city</h3>
-      <ListCitysBar {...hotels}/>
+      <ListCitysBar
+      arrayHotels={hotels} 
+      {...hotels}/>
 
     </aside>
   );

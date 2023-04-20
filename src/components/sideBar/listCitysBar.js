@@ -1,5 +1,9 @@
-const ListCitysBar = ({hotels, city}) => {
-    console.log(hotels)
+import {  useSelector } from "react-redux";
+
+const ListCitysBar = () => {
+
+  const hotels = useSelector((state) => state.hotels.hotels)
+    // console.log( hotels)
   return (
     <ul className="list-group">
     {hotels && hotels.map((hotel) => (

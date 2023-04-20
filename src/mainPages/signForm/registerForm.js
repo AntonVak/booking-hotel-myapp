@@ -3,17 +3,25 @@ import TextFieldForm from "./textFieldForm";
 import validator from "../../utils/validator";
 import { useSelector } from "react-redux";
 import SelectField from "./selectField";
+import RadioField from "./radioField";
+import CheckBoxField from "./checkBoxField";
 
 const RegisterForm = () => {
   const hotels = useSelector((state) => state.hotels.hotels);
-  const [data, setData] = useState({ email: "", password: "", city: "" });
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    city: "",
+    sex: "male",
+    licence: false,
+  });
   const [errors, setError] = useState({});
   if (hotels) {
     // console.log(hotels);
   }
-//   useEffect(() => {
-//     console.log(hotels);
-//   }, [hotels]);
+  //   useEffect(() => {
+  //     console.log(hotels);
+  //   }, [hotels]);
 
   //handleChange - метод для получения данных для всех полей
   const handleChange = ({ target }) => {
@@ -50,10 +58,10 @@ const RegisterForm = () => {
         value: 8,
       },
     },
-    city:{
-        isRequired: {
-            message: "Город обязателен для заполнения",
-          },
+    city: {
+      isRequired: {
+        message: "Город обязателен для заполнения",
+      },
     },
   };
 
@@ -76,6 +84,7 @@ const RegisterForm = () => {
     // console.log(handleSubmit);
   };
 
+    const newLocal = "licence";
   return (
     <div className="container mt-5">
       <div className="row">
@@ -98,15 +107,32 @@ const RegisterForm = () => {
               onChange={handleChange}
               error={errors.password}
             />
-            <SelectField 
-                label="Choose your city"
-                defaultOption="Choose..."
-                onChange={handleChange}
-                value={data.city}
-                option={hotels}
-                error={errors.city}
-
+            <SelectField
+              label="Choose your city"
+              defaultOption="Choose..."
+              onChange={handleChange}
+              value={data.city}
+              option={hotels}
+              error={errors.city}
             />
+            <RadioField
+              options={[
+                { name: "Male", value: "male" },
+                { name: "Female", value: "female" },
+              ]}
+              value={data.sex}
+              name="sex"
+              onChange={handleChange}
+            />
+            <CheckBoxField
+              value={data.licence}
+              onChange={handleChange}
+              name={newLocal}
+              
+            >
+              Confirm <a>license agreement</a>
+            </CheckBoxField>
+
             {/* <div className="mb-4">
               <label htmlFor="validationCustom04" className="form-label">
                 State

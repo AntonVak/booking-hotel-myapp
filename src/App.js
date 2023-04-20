@@ -5,6 +5,7 @@ import HotelPage from "./mainPages/hotels/hotelPage";
 import OrderPage from "./mainPages/order/orderPage";
 import Login from "./mainPages/signForm/login";
 import HomePage from "./mainPages/home/homePage";
+import RegisterForm from "./mainPages/signForm/registerForm";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/hotels" component={HotelPage} />
         <Route path="/order" component={OrderPage} />
         <Route path="/signin" component={Login} />
-        <Route path="/home" exact component={HomePage} />
+        <Route path="/signUp" exact component={RegisterForm} />
         <Redirect to="/home" />
       </Switch>
     </div>
