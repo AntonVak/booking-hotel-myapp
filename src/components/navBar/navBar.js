@@ -8,7 +8,7 @@ const NavBar = () => {
             <h4>Awesome<span>logo</span></h4>
             <div className={styles.navMenu}>
                 <ul>
-                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/hotels">Hotels</Link></li>
                     <li><Link to="/order">My order</Link></li>
                 </ul>

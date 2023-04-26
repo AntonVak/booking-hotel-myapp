@@ -4,7 +4,7 @@ const hotels = [
         name: "Beautiful, best located apartment!",
         title: "Гостевой дом La Piccola Maison",
         city: "Spanish",
-        description: "Son Marimon, this B&B, is located in the municipality of Selva, at the feet of Serra de Tramuntana, recently declared World Heritage Site by UNESCO. It is five minutes away from Lloseta, a village that offers the travellers everything they need: gastronomy, theatre, concerts, shows, historical neighbourhood",
+        // description: "Son Marimon, this B&B, is located in the municipality of Selva, at the feet of Serra de Tramuntana, recently declared World Heritage Site by UNESCO. It is five minutes away from Lloseta, a village that offers the travellers everything they need: gastronomy, theatre, concerts, shows, historical neighbourhood",
         price: 209,
         rate: 3.5,
         image: "https://a0.muscache.com/im/pictures/16186201/7575dc92_original.jpg?aki_policy=xx_large"
