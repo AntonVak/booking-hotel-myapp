@@ -16,7 +16,7 @@ const Login = () => {
       //обращаемся к target.name и присваеваем значение- target.value
       [target.name]: target.value,
     }));
-    console.log(data);
+    
   };
 
   const validatorConfig = {
